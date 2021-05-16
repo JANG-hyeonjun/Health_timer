@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="수행한 운동"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+        <TableLayout
+            android:id="@+id/rec_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="계획한 운동"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        />
+    <TextView
+        android:id="@+id/complete_cnt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="( 0 / 0 )"
+        android:textSize="15sp"
+        android:gravity="end"
+        android:layout_marginEnd="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/plan_scroll">
+            <TableLayout
+                android:id="@+id/plan_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/show_log"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@id/add_plan"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="20dp"
+
+            style="add_plan_style"
+            android:text="LOGS"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:onClick="display_logs"
+            />
+
+        <Button
+            android:id="@+id/add_plan"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+
+            style="add_plan_style"
+            android:text="Add Plan"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:onClick="adding_plan"/>
+
+    </RelativeLayout>
+</LinearLayout>
