@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.helloworld.R;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -102,11 +104,19 @@ public class ProgressActivity extends AppCompatActivity {
     }
 
     public void set_message(){
+        boolean already = modified.getBoolean(today, false);
         //character 부분
+        if(progress < 100 && already){
+            star--;
+            star_sp.edit().putString("user", star.toString()).apply();
+            modified.edit().putBoolean(today, false).apply();
+        }
+
         if(progress >= 0 && progress < 25)
         {
             turtle_list.get(0).setVisibility(View.VISIBLE);
             message.setText(msg[0]);
+
         }
         else if(progress >= 25 && progress < 50)
         {
@@ -125,7 +135,6 @@ public class ProgressActivity extends AppCompatActivity {
         }
         else if(progress >= 100)
         {
-            boolean already = modified.getBoolean(today, false);
             if(!already) {
                 star++;
                 star_sp.edit().putString("user", star.toString()).apply();
